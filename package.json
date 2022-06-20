@@ -1,0 +1,41 @@
+{
+  "author": "AlgoRaven",
+  "name": "@algoraven/emojis",
+  "version": "0.0.1",
+  "private": false,
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "dependencies": {
+    "@types/node-fetch": "^2.0.3",
+    "node-fetch": "^2.0.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "tsc && node build/index.js",
+    "build": "tsc",
+    "prepare": "yarn format && yarn lint && yarn build",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "soft-format": "prettier --check \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json --fix",
+    "soft-lint": "tslint -p tsconfig.json",
+    "upraven": "echo \"No AlgoRaven dependencies.\"",
+    "precommit": "yarn format && yarn lint"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.19.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-etc": "^1.10.0",
+    "tslint-lines-between-class-members": "^1.3.6"
+  },
+  "pre-commit": [
+    "protect",
+    "lint",
+    "format",
+    "build"
+  ],
+  "files": [
+    "build/**/*"
+  ]
+}
