@@ -21,7 +21,7 @@ const CONFIG = {
 const BASE_URL = `https://github.com/${CONFIG.OWNER}/${CONFIG.REPO}/blob/${CONFIG.BRANCH}/data`
 
 const cleanEmojiCode = (code: string) => {
-	code = code.replace('-fe0f', '')
+	code = code.replace(/-fe0f/g, '')
 	return code
 }
 
